@@ -1,0 +1,5 @@
+version: "3.9"
+services:
+  linux:
+    image: centos:centos7
+    container_name: linux
