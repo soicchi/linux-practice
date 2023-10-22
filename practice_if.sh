@@ -1,10 +1,15 @@
 #!/bin/bash
 
-target=$1
+targets=$@
 
-if [ -d $target ]; then
-	ls $1
-elif [ -f $target ]; then
-	head -n 5 $target
-fi
+for target in $targets
+do
+	if [ -d $target ]; then
+		ls $target
+	elif [ -f $target ]; then
+		head -n 5 $target
+	else
+		echo Not file or directory
+	fi
+done
 
